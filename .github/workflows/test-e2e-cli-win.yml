@@ -21,8 +21,8 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: -h
-      - name: Install ActiveTcl
-        run: choco install activetcl
+      - name: Install Magicsplat Tcl/Tk
+        run: choco install magicsplat-tcl-tk
       # - name: Install expect
       #   run: sudo apt-get install -y expect
       # - name: Install Flowershow CLI
