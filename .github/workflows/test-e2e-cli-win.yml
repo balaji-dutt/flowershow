@@ -22,7 +22,7 @@ jobs:
         with:
           args: -h
       - name: Install ActiveTcl
-        run: choco install activectl
+        run: choco install activetcl
       # - name: Install expect
       #   run: sudo apt-get install -y expect
       # - name: Install Flowershow CLI
