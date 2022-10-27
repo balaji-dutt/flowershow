@@ -1,4 +1,4 @@
-name: E2E CLI
+name: E2E CLI Windows
 
 on: [push]
 
@@ -21,6 +21,8 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: -h
+      - name: Install ActiveTcl
+        run: choco install activectl
       # - name: Install expect
       #   run: sudo apt-get install -y expect
       # - name: Install Flowershow CLI
