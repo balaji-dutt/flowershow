@@ -31,10 +31,8 @@ jobs:
         run: tar -xf expect-v0.7.0-amd64.zip
       - name: dir
         run: dir
-      # - name: Install expect
-      #   run: sudo apt-get install -y expect
-      # - name: Install Flowershow CLI
-      #   run: npm install --prefix packages/cli
+      - name: Install Flowershow CLI
+        run: npm install --prefix packages/cli
       # - name: Run tests
       #   env:
       #     NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
