@@ -31,7 +31,7 @@ jobs:
         run: tar -xf expect-v0.7.0-amd64.zip
       - name: dir
         run: dir
-      - name: Install Flowershow CLI
+      - name: Install Flowershow
         run: npm install --prefix packages/cli --cwd packages/cli
       # - name: Run tests
       #   env:
