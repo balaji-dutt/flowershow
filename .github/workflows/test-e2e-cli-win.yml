@@ -26,7 +26,11 @@ jobs:
       - name: Install Wget
         run: choco install wget
       - name: Download expect.lua
-        run: wget -h
+        run: wget https://github.com/hymkor/expect/releases/download/v0.7.0/expect-v0.7.0-amd64.zip
+      - name: Unzip expect.lua
+        run: tar -xf expect-v0.7.0-amd64.zip
+      - name: dir
+        run: dir
       # - name: Install expect
       #   run: sudo apt-get install -y expect
       # - name: Install Flowershow CLI
