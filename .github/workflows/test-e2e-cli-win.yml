@@ -32,7 +32,7 @@ jobs:
       - name: dir
         run: dir
       - name: Install Flowershow CLI
-        run: npm install --prefix packages/cli packages/cli
+        run: cd packages/cli && npm install && cd ..
       # - name: Run tests
         # env:
         #   NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
