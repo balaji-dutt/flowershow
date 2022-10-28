@@ -36,4 +36,4 @@ jobs:
       - name: Run tests
         env:
           NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
-        run: expect.exe packages/cli/e2e/scripts/install.sh
+        run: expect packages/cli/e2e/scripts/install.sh
