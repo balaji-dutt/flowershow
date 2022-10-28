@@ -2,6 +2,7 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 
 import fs from 'fs';
+import os from 'os';
 import path from 'path';
 import chalk from 'chalk';
 import degit from 'degit';
@@ -128,10 +129,18 @@ export default class Creator {
     }
 
     // update content and assets symlinks
-    fs.unlinkSync(`${flowershowDir}/content`);
+    if (os.platform() === 'win32') {
+      fs.unlinkSync(`${flowershowDir}\content`);
+    } else {
+      fs.unlinkSync(`${flowershowDir}/content`);
+    }
     fs.symlinkSync(contentDir, `${flowershowDir}/content`);
 
-    fs.unlinkSync(`${flowershowDir}/public/assets`);
+    if (os.platform() === 'win32') {
+      fs.unlinkSync(`${flowershowDir}\public\assets`);
+    } else {
+      fs.unlinkSync(`${flowershowDir}/public/assets`);
+    }
     if (assetsFolder !== 'none') {
       fs.symlinkSync(path.resolve(contentDir, assetsFolder), `${flowershowDir}/public/${assetsFolder}`);
     }
