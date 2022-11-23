@@ -30,8 +30,21 @@ jobs:
       - run: pnpm install
       - run: sudo apt-get install -y expect
       - run: npx playwright install --with-deps
+
       - name: Run tests
+        uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.8
         env:
           NETLIFY_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
           TERM: xterm # fix for tput
-        run: npx nx affected:e2e
+        with:
+          number-of-agents: 2
+          init-commands: |
+            pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
+          parallel-commands-on-agents: |
+            pnpm exec nx affected --target=e2e --parallel=2
+
+        agents:
+          name: Nx Cloud - Agents
+          uses: nrwl/ci/.github/workflows/nx-cloud-agents.yml@v0.8
+          with:
+            number-of-agents: 2
