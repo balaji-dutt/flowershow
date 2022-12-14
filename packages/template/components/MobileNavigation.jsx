@@ -91,7 +91,7 @@ export function MobileNavigation({ navigation }) {
               legacyBehavior
             >
               {/* <Logomark className="h-9 w-9" /> */}
-              <div className="font-extrabold text-slate-900 dark:text-white text-2xl ml-6">
+              <div className="font-extrabold text-primary dark:text-primary-dark text-2xl ml-6">
                 {siteConfig.author}
               </div>
             </Link>

@@ -75,7 +75,7 @@ export function Layout({ children, tableOfContents }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="min-h-screen dark:bg-slate-900">
+      <div className="min-h-screen bg-background dark:bg-background-dark">
         <Nav />
         <div className="relative mx-auto">
           <main className="flex-auto">
@@ -110,7 +110,7 @@ export function Layout({ children, tableOfContents }) {
             )}
           </main>
         </div>
-        <footer className="dark:bg-slate-900 prose dark:prose-invert max-w-none flex flex-col items-center justify-center w-full h-auto pt-10 pb-20">
+        <footer className="bg-background dark:bg-background-dark prose dark:prose-invert max-w-none flex flex-col items-center justify-center w-full h-auto pt-10 pb-20">
           <div className="flex w-full flex-wrap justify-center">
             {siteConfig.navLinks.map(
               (item) =>
@@ -166,7 +166,7 @@ export function Layout({ children, tableOfContents }) {
       {tableOfContents.length > 0 && (toc ?? siteConfig.tableOfContents) && (
         <div className="hidden xl:fixed xl:right-0 xl:top-[4.5rem] xl:block xl:w-1/5 xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6 xl:mb-16">
           <nav aria-labelledby="on-this-page-title" className="w-56">
-            <h2 className="font-display text-md font-medium text-slate-900 dark:text-white">
+            <h2 className="font-display text-md font-medium text-primary dark:text-primary-dark">
               On this page
             </h2>
             <ol className="mt-4 space-y-3 text-sm">

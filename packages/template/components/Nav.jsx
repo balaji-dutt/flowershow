@@ -55,7 +55,7 @@ function NavbarTitle() {
     <Link
       href="/"
       aria-label="Home page"
-      className="flex items-center font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white"
+      className="flex items-center font-extrabold text-xl sm:text-2xl text-primary dark:text-primary-dark"
     >
       {siteConfig.navbarTitle && chunk}
       {!siteConfig.navbarTitle && siteConfig.title}
@@ -90,8 +90,8 @@ export function Nav() {
         sticky top-0 z-50 flex items-center justify-between px-4 py-5 sm:px-6 lg:px-8 max-w-full
         ${
           isScrolled
-            ? "dark:bg-slate-900/95 backdrop-blur [@supports(backdrop-filter:blur(0))]:dark:bg-slate-900/75"
-            : "dark:bg-slate-900"
+            ? "dark:bg-background-dark/95 backdrop-blur [@supports(backdrop-filter:blur(0))]:dark:bg-background-dark/75"
+            : "dark:bg-background-dark"
         }
       `}
     >
